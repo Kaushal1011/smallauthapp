@@ -41,35 +41,35 @@
     </form>
 
     <script>
-      document.getElementById("submit").addEventListener("click", function (e) {
+      document.getElementById('submit').addEventListener('click', function (e) {
         e.preventDefault();
-        let password = document.getElementById("password").value;
-        let username = document.getElementById("username").value;
+        let password = document.getElementById('password').value;
+        let username = document.getElementById('username').value;
 
-        reqURL = document.URL + "verify";
+        reqURL = document.URL + 'verify';
         var myHeaders = new Headers();
 
-        myHeaders.append("Content-Type", "application/json");
+        myHeaders.append('Content-Type', 'application/json');
 
         var requestOptions = {
-          method: "POST",
+          method: 'POST',
           headers: myHeaders,
           body: JSON.stringify({ username, password }),
         };
 
-        fetch("http://localhost:80/auth", requestOptions)
+        fetch('http://localhost:80/auth', requestOptions)
           .then((res) => {
             console.log(res);
             if (res.ok) {
-              document.getElementById("status").innerText = "Login accepted";
+              document.getElementById('status').innerText = 'Login accepted';
               return res.json();
             } else {
-              document.getElementById("status").innerText = "login failed";
+              document.getElementById('status').innerText = 'login failed';
               return res.json();
             }
           })
           .then((result) => console.log(result))
-          .catch((error) => console.log("error", error));
+          .catch((error) => console.log('error', error));
       });
     </script>
   </body>

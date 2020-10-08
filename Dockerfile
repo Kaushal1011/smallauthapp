@@ -1,13 +1,15 @@
-FROM node:12
+FROM node:lts-buster
 
-WORKDIR /user/src/smallauthapp
+WORKDIR /usr/src/smallauthapp
 
 COPY package*.json ./
 
-RUN npm install
+COPY yarn.lock ./
+
+RUN yarn install
 
 COPY . .
 
 EXPOSE 3000
 
-CMD ["node", "app.js"]
+CMD [ "node", "." ]
