@@ -1,17 +1,27 @@
 {
   "name": "smallauthapp",
   "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
+  "main": "dist/app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc"
   },
   "author": "",
   "license": "ISC",
+  "private": true,
   "dependencies": {
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "pm2": "^4.5.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.7",
+    "@types/express": "^4.17.8",
+    "@types/node": "^14.11.5",
+    "prettier": "^2.1.2",
+    "typescript": "^4.0.3"
+  },
+  "prettier": {
+    "singleQuote": true
   }
 }
